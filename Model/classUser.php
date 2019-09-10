@@ -1,4 +1,4 @@
-idUseridUser<?php
+<?php
 
 /**
 * Class User
