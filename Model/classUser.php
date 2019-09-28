@@ -3,13 +3,13 @@
 /**
 * Class User
 */
-class User(){
+class User{
 
   /**
   * Attributes
   **/
-  private $usid;
-  private $idUser;
+  private $skid;
+  private $id;
   private $username;
   private $password;
   private $email;
@@ -25,9 +25,9 @@ class User(){
   /**
   * user constructor
   **/
-  public function __constructor($usid=0, $idUser=0, $username, $password, $email, $phone, $isAdmin=false, $active=ture, $deleted=false, $startDate=date_timestamp_get(date_create()), $endDate=0, $createdBy=$username, $managedBy=$username){
-    $this->usid = $usid;
-    $this->idUser = $idUser;
+  public function __constructor($skid=0, $id=0, $username, $password, $email, $phone, $isAdmin=false, $active=ture, $deleted=false, $startDate=date_timestamp_get(date_create()), $endDate=0, $createdBy=$username, $managedBy=$username){
+    $this->skid = $skid;
+    $this->id = $id;
     $this->username = $username;
     $this->password = $password;
     $this->email = $email;
@@ -42,33 +42,33 @@ class User(){
   }
 
   /**
-  * Method get usid
+  * Method get skid
   * return int
   **/
-  public function getUsid(){
-    return $this->usid;
+  public function getSkid(){
+    return $this->skid;
   }
   /**
-  * Method set usid
-  * @param int $usid
+  * Method set skid
+  * @param int $skid
   **/
-  public function setUsid($usid){
-    $this->usid = $usid
+  public function setSkid($skid){
+    $this->skid = $skid;
   }
 
   /**
-  * Method get idUser
+  * Method get id
   * return int
   **/
-  public function getIdUser(){
-    return $this->idUser;
+  public function getId(){
+    return $this->id;
   }
   /**
-  * Method set idUser
-  * @param int $idUser
+  * Method set id
+  * @param int $id
   **/
-  public function setIdUser($idUser){
-    $this->idUser = $idUser
+  public function setId($id){
+    $this->id = $id;s
   }
 
   /**
@@ -83,7 +83,7 @@ class User(){
   * @param string $username
   **/
   public function setUsername($username){
-    $this->username = $username
+    $this->username = $username;
   }
 
   /**
@@ -98,7 +98,7 @@ class User(){
   * @param string $password
   **/
   public function setPassword($password){
-    $this->password = $password
+    $this->password = $password;
   }
 
   /**
@@ -113,7 +113,7 @@ class User(){
   * @param string $email
   **/
   public function setEmail($email){
-    $this->email = $email
+    $this->email = $email;
   }
 
   /**
@@ -128,7 +128,7 @@ class User(){
   * @param string $phone
   **/
   public function setPhone($phone){
-    $this->phone = $phone
+    $this->phone = $phone;
   }
 
   /**
@@ -143,7 +143,7 @@ class User(){
   * @param int $iIsAdmin
   **/
   public function setIsAdmin($iIsAdmin){
-    $this->iIsAdmin = $iIsAdmin
+    $this->iIsAdmin = $iIsAdmin;
   }
 
   /**
@@ -158,7 +158,7 @@ class User(){
   * @param int $active
   **/
   public function setActive($active){
-    $this->active = $active
+    $this->active = $active;
   }
 
   /**
@@ -173,7 +173,7 @@ class User(){
   * @param int $deleted
   **/
   public function setDeleted($deleted){
-    $this->deleted = $deleted
+    $this->deleted = $deleted;
   }
 
   /**
@@ -188,7 +188,7 @@ class User(){
   * @param int $startDate
   **/
   public function setStartDate($startDate){
-    $this->startDate = $startDate
+    $this->startDate = $startDate;
   }
 
   /**
@@ -203,7 +203,7 @@ class User(){
   * @param int $endDate
   **/
   public function setEndDate($endDate){
-    $this->endDate = $endDate
+    $this->endDate = $endDate;
   }
 
   /**
@@ -218,7 +218,7 @@ class User(){
   * @param int $createdBy
   **/
   public function setCreatedBy($createdBy){
-    $this->createdBy = $createdBy
+    $this->createdBy = $createdBy;
   }
 
   /**
@@ -233,7 +233,7 @@ class User(){
   * @param int $managedBy
   **/
   public function setManagedBy($managedBy){
-    $this->managedBy = $managedBy
+    $this->managedBy = $managedBy;
   }
 
 }

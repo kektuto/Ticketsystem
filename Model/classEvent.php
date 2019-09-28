@@ -3,18 +3,19 @@
 /**
 * Class Event
 **/
-class Event(){
+class Event{
 
   /**
   * Attributes
   **/
-  private $evid;
-  private $idEvent;
+  private $skid;
+  private $id;
   private $date;
   private $address;
   private $eventName;
   private $ticketlimit;
   private $cathergory;
+  private $arrayTickets;
   private $active;
   private $deleted;
   private $startDate;
@@ -25,14 +26,15 @@ class Event(){
   /**
   * event constructor
   **/
-  public function __constructor($evid=0, $idEvent=0, $date, $address, $eventName, $ticketlimit, $cathergory, $active=ture, $deleted=false, $startDate=date_timestamp_get(date_create()), $endDate=0, $createdBy=$username, $managedBy=$username){
-    $this->evid = $evid;
-    $this->idEvent = $idEvent;
+  public function __constructor($skid=0, $id=0, $date, $address, $eventName, $ticketlimit, $cathergory, $arrayTickets=0, $active=ture, $deleted=false, $startDate=date_timestamp_get(date_create()), $endDate=0, $createdBy=$username, $managedBy=$username){
+    $this->skid = $skid;
+    $this->id = $id;
     $this->date = $date;
     $this->address = $address;
     $this->eventName = $eventName;
     $this->ticketlimit = $ticketlimit;
     $this->cathergory = $cathergory;
+    $this->arrayTickets = $arrayTickets;
     $this->active = $active;
     $this->deleted = $deleted;
     $this->startDate = $startDate;
@@ -42,33 +44,33 @@ class Event(){
   }
 
   /**
-  * Method get $evid
+  * Method get $skid
   * return int
   **/
-  public function getEvid(){
-    return $this->evid;
+  public function getSkid(){
+    return $this->skid;
   }
   /**
-  * Method set $evid
-  * @param int $evid
+  * Method set $skid
+  * @param int $skid
   **/
-  public function setEvid($evid){
-    $this->evid = $evid
+  public function setSkid($skid){
+    $this->skid = $skid;
   }
 
   /**
-  *Method get Id Event
-  *@return mixed
+  *Method get Id
+  *@return mixed id
   **/
-  public function getIdEvent(){
-    return $this->idEvent;
+  public function getId(){
+    return $this->id;
   }
   /**
   * Method set Id Event
-  * @param mixed idEvent
+  * @param mixed id
   **/
-  public function setIdEvent($idEvent){
-  $this->idEvent = $idEvent;
+  public function setId($id){
+  $this->id = $id;
   }
 
   /**
@@ -144,6 +146,21 @@ class Event(){
   **/
   public function setCathergory($cathergory){
   $this->cathergory = $cathergory;
+  }
+
+  /**
+  *Method get arrayTicket
+  *@return mixed $arrayTickets
+  **/
+  public function getArrayTickets(){
+    return $this->arrayTickets;
+  }
+  /**
+  * Method set arrayTickets
+  * @param mixed cathergory
+  **/
+  public function setArrayTickets($arrayTickets){
+  $this->arrayTickets = $arrayTickets;
   }
 
   /**
@@ -235,6 +252,20 @@ class Event(){
   public function setManagedBy($managedBy){
   $this->managedBy = $managedBy;
   }
+
+  /**
+	 * Metode getWhereclauseEvent
+	 */
+	 public function getWhereclauseEvent(){
+	 	$where = "sk_id IS NOT NULL";
+		if($this->getSkid()){
+			$where = 'sk_id = '.$this->getSkid();
+		}
+		if($this->getId()){
+			$where .= ' AND id = ' .'"'.$this->getId().'"';
+		}
+		return $where;
+	 }
 
 }
 
