@@ -14,26 +14,96 @@ class Ticket{
   private $sector;
   private $seat;
   private $row;
-  private $active;
-  private $deleted;
-  private $startDate;
-  private $endDate;
 
-  public function __constructor($skid=0, $id=0, $status, $sector, $email, $phone, $isAdmin=false, $active=ture, $deleted=false, $startDate=date_timestamp_get(date_create()), $endDate=0, $createdBy=$username, $managedBy=$username){
+  public function __constructor($skid=0, $id=0, $status, $sector, $seat, $row){
     $this->skid = $skid;
     $this->id = $id;
-    $this->username = $username;
-    $this->password = $password;
-    $this->email = $email;
-    $this->phone = $phone;
-    $this->isAdmin = $isAdmin;
-    $this->active = $active;
-    $this->deleted = $deleted;
-    $this->startDate = $startDate;
-    $this->endDate = $endDate;
-    $this->createdBy = $createdBy;
-    $this->managedBy = $managedBy;
+    $this->sector = $sector;
+    $this->seat = $seat;
+    $this->row = $row;
   }
+
+    /**
+     * @return mixed
+     */
+    public function getSkid()
+    {
+        return $this->skid;
+    }
+
+    /**
+     * @param mixed $skid
+     */
+    public function setSkid($skid)
+    {
+        $this->skid = $skid;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
+
+    /**
+     * @param mixed $id
+     */
+    public function setId($id)
+    {
+        $this->id = $id;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getSector()
+    {
+        return $this->sector;
+    }
+
+    /**
+     * @param mixed $sector
+     */
+    public function setSector($sector)
+    {
+        $this->sector = $sector;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getSeat()
+    {
+        return $this->seat;
+    }
+
+    /**
+     * @param mixed $seat
+     */
+    public function setSeat($seat)
+    {
+        $this->seat = $seat;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getRow()
+    {
+        return $this->row;
+    }
+
+    /**
+     * @param mixed $row
+     */
+    public function setRow($row)
+    {
+        $this->row = $row;
+    }
+
+
 
   /**
    * Metode getWhereclauseTicket

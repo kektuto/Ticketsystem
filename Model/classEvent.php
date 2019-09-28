@@ -16,17 +16,11 @@ class Event{
   private $ticketlimit;
   private $cathergory;
   private $arrayTickets;
-  private $active;
-  private $deleted;
-  private $startDate;
-  private $endDate;
-  private $createdBy;
-  private $managedBy;
 
   /**
   * event constructor
   **/
-  public function __constructor($skid=0, $id=0, $date, $address, $eventName, $ticketlimit, $cathergory, $arrayTickets=0, $active=ture, $deleted=false, $startDate=date_timestamp_get(date_create()), $endDate=0, $createdBy=$username, $managedBy=$username){
+  public function __constructor($skid=0, $id=0, $date, $address, $eventName, $ticketlimit, $cathergory, $arrayTickets=0){
     $this->skid = $skid;
     $this->id = $id;
     $this->date = $date;
@@ -35,12 +29,6 @@ class Event{
     $this->ticketlimit = $ticketlimit;
     $this->cathergory = $cathergory;
     $this->arrayTickets = $arrayTickets;
-    $this->active = $active;
-    $this->deleted = $deleted;
-    $this->startDate = $startDate;
-    $this->endDate = $endDate;
-    $this->createdBy = $createdBy;
-    $this->managedBy = $managedBy;
   }
 
   /**
@@ -161,96 +149,6 @@ class Event{
   **/
   public function setArrayTickets($arrayTickets){
   $this->arrayTickets = $arrayTickets;
-  }
-
-  /**
-  *Method get Active
-  *@return mixed
-  **/
-  public function getActive(){
-    return $this->active;
-  }
-  /**
-  * Method set Active
-  * @param mixed active
-  **/
-  public function setActive($active){
-  $this->active = $active;
-  }
-
-  /**
-  *Method get Deleted
-  *@return mixed
-  **/
-  public function getDeleted(){
-    return $this->deleted;
-  }
-  /**
-  * Method set Deleted
-  * @param mixed deleted
-  **/
-  public function setDeleted($deleted){
-  $this->deleted = $deleted;
-  }
-
-  /**
-  *Method get Start Date
-  *@return mixed
-  **/
-  public function getStartDate(){
-    return $this->startDate;
-  }
-  /**
-  * Method set Start Date
-  * @param mixed startDate
-  **/
-  public function setStartDate($startDate){
-  $this->startDate = $startDate;
-  }
-
-  /**
-  *Method get End Date
-  *@return mixed
-  **/
-  public function getEndDate(){
-    return $this->endDate;
-  }
-  /**
-  * Method set End Date
-  * @param mixed endDate
-  **/
-  public function setEndDate($endDate){
-  $this->endDate = $endDate;
-  }
-
-  /**
-  *Method get Created By
-  *@return mixed
-  **/
-  public function getCreatedBy(){
-    return $this->createdBy;
-  }
-  /**
-  * Method set Created By
-  * @param mixed createdBy
-  **/
-  public function setCreatedBy($createdBy){
-  $this->createdBy = $createdBy;
-  }
-
-  /**
-  *Method get Managed By
-  *@return mixed
-  **/
-  public function getManagedBy(){
-    return $this->managedBy;
-  }
-  /**
-  * Method set Managed By
-  * @param mixed managedBy
-  **/
-  public function setManagedBy($managedBy){
-  $this->managedBy = $managedBy;
   }
 
   /**
