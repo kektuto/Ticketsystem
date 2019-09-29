@@ -1,8 +1,14 @@
 <?php
+namespace Ticketsystem\Repository;
 /**
  * Klasee repositoryEvent erstellen
  */
-class RepositoryTicket extends Connection{
+class RepositoryTicket{
+  private $db;
+
+  public function __construct($db){
+    $this->db = $db;
+  }
 
   /**
   * showTicket
@@ -14,7 +20,7 @@ class RepositoryTicket extends Connection{
       $result = $this->db->query($sql);
       if ($result->num_rows > 0){
         while ($row = $result->fetch_assoc()) {
-          $t = new Ticket($row["sk_id"],$row["id"]);
+          $t = new Ticket($row["sk_id"],$row["idCustomer"]);
           $return[] = $t;
         }
       }

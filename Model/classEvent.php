@@ -1,5 +1,5 @@
 <?php
-
+namespace Ticketsystem\Model;
 /**
 * Class Event
 **/
@@ -16,11 +16,13 @@ class Event{
   private $ticketlimit;
   private $cathergory;
   private $arrayTickets;
+  private $eventLocation;
+  private $eventTyp;
 
   /**
   * event constructor
   **/
-  public function __constructor($skid=0, $id=0, $date, $address, $eventName, $ticketlimit, $cathergory, $arrayTickets=0){
+  public function __constructor($skid=0, $id=0, $date, $address, $eventName, $ticketlimit, $cathergory, $arrayTickets=0, $eventLocation=0, $eventTyp=0){
     $this->skid = $skid;
     $this->id = $id;
     $this->date = $date;
@@ -29,17 +31,19 @@ class Event{
     $this->ticketlimit = $ticketlimit;
     $this->cathergory = $cathergory;
     $this->arrayTickets = $arrayTickets;
+    $this->eventLocation = $eventLocation;
+    $this->eventTyp = $eventTyp;
   }
 
   /**
-  * Method get $skid
+  * Method get $skidUser
   * return int
   **/
   public function getSkid(){
     return $this->skid;
   }
   /**
-  * Method set $skid
+  * Method set $skidUser
   * @param int $skid
   **/
   public function setSkid($skid){
@@ -48,14 +52,14 @@ class Event{
 
   /**
   *Method get Id
-  *@return mixed id
+  *@return mixed idCustomer
   **/
   public function getId(){
     return $this->id;
   }
   /**
   * Method set Id Event
-  * @param mixed id
+  * @param mixed idCustomer
   **/
   public function setId($id){
   $this->id = $id;
@@ -152,6 +156,38 @@ class Event{
   }
 
   /**
+   * @return mixed
+   */
+  public function getEventLocation()
+  {
+    return $this->eventLocation;
+  }
+
+  /**
+   * @param mixed $eventLocation
+   */
+  public function setEventLocation($eventLocation)
+  {
+    $this->eventLocation = $eventLocation;
+  }
+
+  /**
+   * @return mixed
+   */
+  public function getEventTyp()
+  {
+    return $this->eventTyp;
+  }
+
+  /**
+   * @param mixed $eventTyp
+   */
+  public function setEventTyp($eventTyp)
+  {
+    $this->eventTyp = $eventTyp;
+  }
+
+  /**
 	 * Metode getWhereclauseEvent
 	 */
 	 public function getWhereclauseEvent(){
@@ -160,7 +196,7 @@ class Event{
 			$where = 'sk_id = '.$this->getSkid();
 		}
 		if($this->getId()){
-			$where .= ' AND id = ' .'"'.$this->getId().'"';
+			$where .= ' AND idCustomer = ' .'"'.$this->getId().'"';
 		}
 		return $where;
 	 }

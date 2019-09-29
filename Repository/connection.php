@@ -1,4 +1,5 @@
 <?php
+namespace Ticketsystem\Repository;
 /**
  * Klasee Datenuebertragung erstellen
  */

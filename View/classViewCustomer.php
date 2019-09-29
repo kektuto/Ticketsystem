@@ -1,5 +1,5 @@
 <?PHP
-
+namespace Ticketsystem\View;
 class ViewCustomer {
 
 	private function replaceSection($markerArray, $section) {

@@ -1,5 +1,5 @@
 <?php
-
+namespace Ticketsystem\Repository;
 //include 'repositoryTicket.php';
 
 /**
@@ -30,7 +30,7 @@ class RepositoryEvent{
             $repositoryTicket = new RepositoryTicket();
             $arrayTickets = $repositoryTicket->showTicket(new Ticket(),$filter->getSkid);
           }
-          $e = new Event($row["skid"],$row["id"]);
+          $e = new Event($row["skidUser"],$row["idCustomer"]);
           $e->setArrayTickets($arrayTickets);
         }
       }

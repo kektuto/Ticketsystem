@@ -1,5 +1,5 @@
 <?php
-
+namespace Ticketsystem\Model;
 /**
 * Class User
 */
@@ -8,57 +8,55 @@ class User{
   /**
   * Attributes
   **/
-  private $skid;
-  private $id;
+  private $skidUser;
+  private $idCustomer;
   private $username;
   private $password;
   private $email;
-  private $phone;
   private $isAdmin;
 
 
   /**
   * user constructor
   **/
-  public function __constructor($skid=0, $id=0, $username, $password, $email, $phone, $isAdmin=false){
-    $this->skid = $skid;
-    $this->id = $id;
+  public function __constructor($skidUser=0, $idUser=0, $username, $password, $email, $isAdmin=false){
+    $this->skidUser = $skidUser;
+    $this->idCustomer = $idUser;
     $this->username = $username;
     $this->password = $password;
     $this->email = $email;
-    $this->phone = $phone;
     $this->isAdmin = $isAdmin;
 
   }
 
   /**
-  * Method get skid
+  * Method get skidUser
   * return int
   **/
-  public function getSkid(){
-    return $this->skid;
+  public function getSkidUser(){
+    return $this->skidUser;
   }
   /**
-  * Method set skid
-  * @param int $skid
+  * Method set skidUser
+  * @param int $skidUser
   **/
-  public function setSkid($skid){
-    $this->skid = $skid;
+  public function setSkidUser($skidUser){
+    $this->skidUser = $skidUser;
   }
 
   /**
-  * Method get id
+  * Method get idCustomer
   * return int
   **/
-  public function getId(){
-    return $this->id;
+  public function getIdCustomer(){
+    return $this->idCustomer;
   }
   /**
-  * Method set id
-  * @param int $id
+  * Method set idCustomer
+  * @param int $idCustomer
   **/
-  public function setId($id){
-    $this->id = $id;
+  public function setIdCustomer($idCustomer){
+    $this->idCustomer = $idCustomer;
   }
 
   /**
@@ -107,33 +105,18 @@ class User{
   }
 
   /**
-  * Method get phone
-  * return string
-  **/
-  public function getPhone(){
-    return $this->phone;
-  }
-  /**
-  * Method set phone
-  * @param string $phone
-  **/
-  public function setPhone($phone){
-    $this->phone = $phone;
-  }
-
-  /**
-  * Method get iIsAdmin
+  * Method get IsAdmin
   * return int
   **/
   public function getIsAdmin(){
-    return $this->iIsAdmin;
+    return $this->IsAdmin;
   }
   /**
-  * Method set iIsAdmin
-  * @param int $iIsAdmin
+  * Method set IsAdmin
+  * @param int $IsAdmin
   **/
-  public function setIsAdmin($iIsAdmin){
-    $this->iIsAdmin = $iIsAdmin;
+  public function setIsAdmin($IsAdmin){
+    $this->IsAdmin = $IsAdmin;
   }
 }
 

@@ -1,5 +1,5 @@
 <?php
-
+namespace Ticketsystem\Model;
 /**
 * Class Address
 **/
@@ -40,7 +40,7 @@ class Address{
   }
   /**
   * Method set Id
-  * @param mixed id
+  * @param mixed idCustomer
   **/
   public function setId($id){
   $this->id = $id;

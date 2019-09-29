@@ -1,4 +1,9 @@
 <?php
+namespace Ticketsystem\Controller;
+
+
+use Ticketsystem\Repository\Connection;
+use Ticketsystem\Repository\RepositoryEvent;
 
 include '../Model/classAddress.php';
 include '../Model/classEvent.php';
@@ -14,6 +19,6 @@ $connection = new Connection('localhost', 'root', '', 'ticketsystem');
 $repositoryEvent = new RepositoryEvent($connection->getDatabase());
 
 $events = $repositoryEvent->showEvent(new Event(),1);
-
+print_r($events);
 
 ?>
