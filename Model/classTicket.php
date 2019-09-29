@@ -1,5 +1,5 @@
 <?php
-namespace Ticketsystem\Model;
+//namespace Ticketsystem\Model;
 
 /**
 * Class Ticket
@@ -15,7 +15,7 @@ class Ticket{
   private $seat;
   private $row;
 
-  public function __constructor($skid=0, $id=0, $status, $sector, $seat, $row){
+  public function __construct($skid=0, $id=0, $sector="", $seat=0, $row=0){
     $this->skid = $skid;
     $this->id = $id;
     $this->sector = $sector;
@@ -109,7 +109,7 @@ class Ticket{
    * Metode getWhereclauseTicket
    */
    public function getWhereclauseTicket($fk_sk_id_event=0){
-    $where = "skidUser IS NOT NULL";
+    $where = "sk_id IS NOT NULL";
     if($this->getSkid()){
       $where = 'sk_id = '.$this->getSkid();
     }
@@ -117,7 +117,7 @@ class Ticket{
       $where .= ' AND idCustomer = ' .'"'.$this->getId().'"';
     }
     if($fk_sk_id_event){
-      $where .= ' AND $fk_sk_id_event = ' .'"'.$fk_sk_id_event.'"';
+      $where .= ' AND fk_sk_id_event = ' .$fk_sk_id_event;
     }
     return $where;
    }

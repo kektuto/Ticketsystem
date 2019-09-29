@@ -1,9 +1,7 @@
 <?php
-namespace Ticketsystem\Controller;
 
-
-use Ticketsystem\Repository\Connection;
-use Ticketsystem\Repository\RepositoryEvent;
+//use Ticketsystem\Repository;
+//use Ticketsystem\Model\Event;
 
 include '../Model/classAddress.php';
 include '../Model/classEvent.php';

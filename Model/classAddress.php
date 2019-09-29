@@ -1,5 +1,5 @@
 <?php
-namespace Ticketsystem\Model;
+//namespace Ticketsystem\Model;
 /**
 * Class Address
 **/
@@ -20,7 +20,7 @@ class Address{
   /**
   * event constructor
   **/
-  public function __constructor($skid=0,$id=0, $street="", $house_nr, $house_nr_z, $plz, $city, $scd_user){
+  public function __construct($skid=0,$id=0, $street="", $house_nr, $house_nr_z, $plz, $city, $scd_user){
     $this->skid = $skid;
     $this->id = $id;
     $this->street = $street;

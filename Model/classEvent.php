@@ -1,5 +1,5 @@
 <?php
-namespace Ticketsystem\Model;
+//namespace Ticketsystem\Model;
 /**
 * Class Event
 **/
@@ -14,22 +14,32 @@ class Event{
   private $address;
   private $eventName;
   private $ticketlimit;
-  private $cathergory;
+  private $category;
   private $arrayTickets;
   private $eventLocation;
   private $eventTyp;
 
   /**
-  * event constructor
-  **/
-  public function __constructor($skid=0, $id=0, $date, $address, $eventName, $ticketlimit, $cathergory, $arrayTickets=0, $eventLocation=0, $eventTyp=0){
+   * event constructor
+   * @param int $skid
+   * @param int $id
+   * @param $date
+   * @param $address
+   * @param $eventName
+   * @param $ticketlimit
+   * @param $category
+   * @param int $arrayTickets
+   * @param int $eventLocation
+   * @param int $eventTyp
+   */
+  public function __construct($skid=0, $id=0, $date=0, $address="", $eventName="", $ticketlimit=0, $category="", $arrayTickets=0, $eventLocation=0, $eventTyp=0){
     $this->skid = $skid;
     $this->id = $id;
     $this->date = $date;
     $this->address = $address;
     $this->eventName = $eventName;
     $this->ticketlimit = $ticketlimit;
-    $this->cathergory = $cathergory;
+    $this->category = $category;
     $this->arrayTickets = $arrayTickets;
     $this->eventLocation = $eventLocation;
     $this->eventTyp = $eventTyp;
@@ -126,18 +136,18 @@ class Event{
   }
 
   /**
-  *Method get Cathergory
+  *Method get $category
   *@return mixed
   **/
-  public function getCathergory(){
-    return $this->cathergory;
+  public function getCategory(){
+    return $this->$category;
   }
   /**
-  * Method set Cathergory
-  * @param mixed cathergory
+  * Method set $category
+  * @param mixed $category
   **/
-  public function setCathergory($cathergory){
-  $this->cathergory = $cathergory;
+  public function setCategory($category){
+  $this->category = $category;
   }
 
   /**

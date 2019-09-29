@@ -1,5 +1,5 @@
 <?php
-namespace Ticketsystem\Model;
+//namespace Ticketsystem\Model;
 
 class EventLocation
 {

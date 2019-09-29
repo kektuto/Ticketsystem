@@ -1,6 +1,5 @@
 <?php
-namespace Ticketsystem\Repository;
-//include 'repositoryTicket.php';
+//namespace Ticketsystem\Repository;
 
 /**
  * Klasee repositoryEvent erstellen
@@ -20,18 +19,19 @@ class RepositoryEvent{
   */
   public function showEvent($filter, $option=0){
     $return = array();
+    $arrayTickets = array();
     if($filter instanceof Event){
       $sql = "SELECT * FROM ticketsystem.h_event WHERE " .$filter->getWhereclauseEvent();
       $result = $this->db->query($sql);
-	  print_r("repositoryEvent: ".$sql);
       if ($result->num_rows > 0){
         while ($row = $result->fetch_assoc()) {
-          if($option==1 && $filter->getSkid()){
-            $repositoryTicket = new RepositoryTicket();
-            $arrayTickets = $repositoryTicket->showTicket(new Ticket(),$filter->getSkid);
+          $e = new Event($row["sk_id"],$row["id"]);
+          if($option==1 && $e->getSkid()){
+            $repositoryTicket = new RepositoryTicket($this->db);
+            $arrayTickets = $repositoryTicket->showTicket(new Ticket(),$e->getSkid());
           }
-          $e = new Event($row["skidUser"],$row["idCustomer"]);
           $e->setArrayTickets($arrayTickets);
+          $return[] = $e;
         }
       }
     return $return;

@@ -1,5 +1,5 @@
 <?php
-namespace Ticketsystem\Model;
+//namespace Ticketsystem\Model;
 
 class Customer extends User{
 
@@ -12,9 +12,9 @@ class Customer extends User{
     private $dataOfBirth;
     private $isVip;
 
-    public function __constructor($skidUser = 0, $idUser = 0, $username, $password, $email, $isAdmin = false, $skidCustomer=0, $idCustomer=0, $address=0, $salutation, $firstName, $lastName, $dataOfBirth, $isVip)
+    public function __construct($skidUser = 0, $idUser = 0, $username, $password, $email, $isAdmin = false, $skidCustomer=0, $idCustomer=0, $address=0, $salutation, $firstName, $lastName, $dataOfBirth, $isVip)
     {
-        parent::__constructor($skidUser, $idUser, $username, $password, $email, $isAdmin);
+        parent::__construct($skidUser, $idUser, $username, $password, $email, $isAdmin);
         $this->skidCustomer = $skidCustomer;
         $this->idCustomer = $idCustomer;
         $this->address = $address;
